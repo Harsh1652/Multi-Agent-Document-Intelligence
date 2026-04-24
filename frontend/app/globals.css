@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  /* Backgrounds */
+  --bg-page:    #121212;
+  --bg-section: #1a1a1a;
+  --bg-card:    #1f1f1f;
+  --border:     #262626;
+
+  /* Text */
+  --text-heading: #e5e7eb;
+  --text-body:    #9ca3af;
+  --text-label:   #6b7280;
+  --text-fine:    #4b5563;
+
+  /* Accent */
+  --blue-cta:   #2d5bff;
+  --blue-link:  #3b82f6;
+  --amber:      #fbbf24;
+
+  /* Fonts */
+  --font-ui:       var(--font-space-grotesk), system-ui, sans-serif;
+  --font-serif:    var(--font-playfair), Georgia, serif;
+  --font-mono:     var(--font-jetbrains), "Courier New", monospace;
+}
+
+html { background: var(--bg-page); }
+
+body {
+  background: var(--bg-page);
+  color: var(--text-body);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Custom animations ───────────────────────────────────────── */
+
+@keyframes ping-slow {
+  75%, 100% { transform: scale(1.8); opacity: 0; }
+}
+.animate-ping-slow {
+  animation: ping-slow 1.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulse-border-blue {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(45, 91, 255, 0.5); }
+  50%       { box-shadow: 0 0 0 8px rgba(45, 91, 255, 0); }
+}
+.animate-pulse-border {
+  animation: pulse-border-blue 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.animate-shimmer {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6, #1e3a8a);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Prose overrides for dark mode ───────────────────────────── */
+.prose { color: var(--text-body); }
+.prose h1, .prose h2, .prose h3, .prose h4 { color: var(--text-heading); }
+.prose strong { color: var(--text-heading); }
+.prose a { color: var(--blue-link); }
+.prose code {
+  font-family: var(--font-mono);
+  background: var(--bg-card);
+  color: var(--text-heading);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+.prose ul li::marker { color: var(--text-label); }
+.prose hr { border-color: var(--border); }

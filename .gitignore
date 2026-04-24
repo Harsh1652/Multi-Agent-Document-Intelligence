@@ -1,0 +1,63 @@
+# Environment variables - NEVER commit these
+.env
+.env.local
+.env.*.local
+
+# Claude/Cursor local settings
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+*.whl
+venv/
+env/
+.venv/
+.env/
+pip-wheel-metadata/
+*.pyc
+
+# Node / Frontend
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp
+.pnp.js
+.next/
+out/
+.nuxt/
+.cache/
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Test / Coverage
+coverage/
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+
+# Uploads / temp files
+backend/uploads/
+*.tmp
