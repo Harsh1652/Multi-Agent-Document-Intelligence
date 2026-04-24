@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePipeline } from "./hooks/usePipeline";
 import UploadZone from "./components/UploadZone";
 import AgentPipeline from "./components/AgentPipeline";
@@ -32,12 +31,6 @@ export default function Home() {
             </p>
           </div>
           <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-            <Link
-              href="/case-study"
-              className="text-xs sm:text-sm text-[#4b5563] hover:text-[#6b7280] transition-colors hidden sm:block"
-            >
-              Case study
-            </Link>
             {phase !== "idle" && (
               <button
                 onClick={reset}
